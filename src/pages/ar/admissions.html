@@ -1,0 +1,99 @@
+<!--meta {
+  "title": "التسجيل 2027–2028 – اختبار القبول والتسجيل الأولي | زهرة المدائن",
+  "description": "سجّلوا طفلكم تسجيلًا أوليًا أو احجزوا اختبار القبول عبر الموقع للعودة المدرسية 2027–2028 بمدرسة زهرة المدائن، المدينة الجديدة، بن عروس."
+}-->
+<section class="hero hero-page" aria-labelledby="t-adm">
+  <div class="wrap">
+    <div class="hero-text narrow">
+      <h1 id="t-adm">التسجيل 2027–2028</h1>
+      <p class="lead">استمارة واحدة لكل الطلبات. للسنة التحضيرية والسنة الأولى، التسجيل الأولي مباشر. ابتداءً من السنة الثانية، يكون القبول بعد اختبار خلال العطل المدرسية.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-top">
+  <div class="wrap">
+    <div class="head"><h2>كيف تتمّ العملية</h2></div>
+    <ol class="steps">
+      <li><h3>تقدّمون الطلب</h3><p class="muted">املؤوا الاستمارة أدناه. للالتحاق بالسنة الثانية أو ما بعدها، اختاروا أيضًا دورة الاختبار.</p></li>
+      <li><h3>المدرسة تتصل بكم</h3><p class="muted">تتصل بكم الإدارة لتأكيد المقعد أو لتحديد يوم الاختبار وساعته.</p></li>
+      <li><h3>الاختبار عند الحاجة</h3><p class="muted">اختبار يتلاءم مع مستوى الطفل، داخل المدرسة.</p></li>
+      <li><h3>التسجيل</h3><p class="muted">تستكملون التسجيل لدى الإدارة بالوثائق المطلوبة.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec sec-tint" id="formulaire">
+  <div class="wrap adm">
+    <div>
+      <form class="formbox" id="form-adm" novalidate>
+        <fieldset>
+          <legend>1. طفلكم</legend>
+          <div class="field"><label for="a-enfant">اسم الطفل ولقبه</label><input type="text" id="a-enfant" name="enfant" autocomplete="off" required><span class="msg">أدخلوا اسم الطفل ولقبه.</span></div>
+          <div class="grid2">
+            <div class="field"><label for="a-naiss">تاريخ الولادة</label><input type="date" id="a-naiss" name="naissance" min="2010-01-01" required><span class="msg">أدخلوا تاريخ الولادة.</span></div>
+            <div class="field"><label for="a-niveau">المستوى المطلوب لسنة 2027–2028</label>
+              <select id="a-niveau" name="niveau" required>
+                <option value="">اختاروا…</option>
+                <option value="Préparatoire">السنة التحضيرية</option>
+                <option value="1re année">السنة الأولى</option>
+                <option value="2e année" data-test>السنة الثانية</option>
+                <option value="3e année" data-test>السنة الثالثة</option>
+                <option value="4e année" data-test>السنة الرابعة</option>
+                <option value="5e année" data-test>السنة الخامسة</option>
+                <option value="6e année" data-test>السنة السادسة</option>
+              </select><span class="msg">اختاروا المستوى المطلوب.</span></div>
+          </div>
+          <div class="field"><label for="a-ecole">المدرسة الحالية</label><input type="text" id="a-ecole" name="ecole_actuelle" placeholder="اختياري"></div>
+          <p class="info" id="adm-kind" hidden></p>
+        </fieldset>
+
+        <fieldset id="adm-session" hidden>
+          <legend>2. دورة الاختبار</legend>
+          <div class="sessions" role="radiogroup" aria-label="دورة الاختبار">
+            <div class="session"><input type="radio" name="session" id="s1" value="Février 2027"><label for="s1"><b>فيفري 2027</b><span>عطلة منتصف الثلاثي</span></label></div>
+            <div class="session"><input type="radio" name="session" id="s2" value="Mars 2027"><label for="s2"><b>مارس 2027</b><span>عطلة الربيع</span></label></div>
+            <div class="session"><input type="radio" name="session" id="s3" value="Juin 2027"><label for="s3"><b>جوان 2027</b><span>نهاية السنة الدراسية</span></label></div>
+          </div>
+          <p class="hint">يُؤكَّد لكم اليوم والساعة بالضبط عبر الهاتف.</p>
+          <p class="field err" id="err-session" hidden><span class="msg" style="display:block">اختاروا دورة الاختبار.</span></p>
+        </fieldset>
+
+        <fieldset>
+          <legend><span data-step>2</span>. بيانات الاتصال</legend>
+          <div class="grid2">
+            <div class="field"><label for="a-parent">اسم الوليّ</label><input type="text" id="a-parent" name="parent" autocomplete="name" required><span class="msg">أدخلوا اسمكم.</span></div>
+            <div class="field"><label for="a-tel">الهاتف</label><input type="tel" id="a-tel" name="tel" autocomplete="tel" inputmode="tel" dir="ltr" placeholder="97 516 240" required><span class="hint">8 أرقام، ستتصل بكم المدرسة على هذا الرقم.</span><span class="msg">أدخلوا رقمًا تونسيًا من 8 أرقام.</span></div>
+          </div>
+          <div class="field"><label for="a-email">البريد الإلكتروني</label><input type="email" id="a-email" name="email" autocomplete="email" dir="ltr" placeholder="اختياري"><span class="msg">تثبّتوا من البريد الإلكتروني.</span></div>
+          <div class="field"><label for="a-msg">ملاحظة تودّون إضافتها؟</label><textarea id="a-msg" name="message" placeholder="إخوة يدرسون في المدرسة، احتياجات خاصة… (اختياري)"></textarea></div>
+          <div class="field"><div class="check"><input type="checkbox" id="a-ok" name="accord" required><label for="a-ok" style="font-weight:500">أوافق على أن تستعمل المدرسة هذه المعطيات للاتصال بي بخصوص التسجيل.</label></div><span class="msg">ضعوا علامة في هذه الخانة لإرسال الطلب.</span></div>
+        </fieldset>
+        <div class="hp" aria-hidden="true"><label for="a-site">لا تملأ هذه الخانة</label><input type="text" id="a-site" name="site" tabindex="-1" autocomplete="off"></div>
+        <div class="form-end"><button class="btn btn-main" type="submit">إرسال الطلب</button><p class="notice" data-notice></p></div>
+      </form>
+      <div class="done" id="done-adm" role="status" tabindex="-1">
+        <h3 data-done-title></h3>
+        <p data-done-text></p>
+        <a class="btn btn-line" href="/ar/">العودة إلى الرئيسية</a>
+      </div>
+    </div>
+
+    <aside class="aside">
+      <div class="aside-box">
+        <h2>الوثائق المطلوبة</h2>
+        <p class="muted">تُقدَّم إلى الإدارة بعد تأكيد المقعد.</p>
+        <ul>
+          <li>مضمون ولادة الطفل</li>
+          <li>صور شمسية حديثة</li>
+          <li>آخر بطاقة أعداد (ابتداءً من السنة الأولى)</li>
+        </ul>
+      </div>
+      <div class="aside-box">
+        <h2>معاليم الدراسة</h2>
+        <p class="muted">تُعلمكم الإدارة بمعاليم التسجيل والأقساط الشهرية.</p>
+        <p><a href="tel:+21697516240" dir="ltr">97 516 240</a> · <a href="https://wa.me/21697516240" rel="noopener">واتساب</a></p>
+      </div>
+    </aside>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+<!--meta {
+  "title": "Espace école – Zahrat Al Madaeen",
+  "description": "Espace réservé à l’administration de l’école."
+}-->
+<section class="sec" id="espace">
+  <div class="wrap">
+    <div class="head">
+      <h1 style="font-size:clamp(2rem,4vw,3rem)">Espace école</h1>
+      <p>Toutes les demandes envoyées depuis le site (tests d’admission et pré-inscriptions). Visible uniquement par l’école.</p>
+    </div>
+    <form class="formbox login" id="esp-login" novalidate hidden>
+      <fieldset>
+        <legend>Connexion de l’administration</legend>
+        <div class="field"><label for="l-email">E-mail</label><input type="email" id="l-email" name="email" autocomplete="username" required><span class="msg">Indiquez votre e-mail.</span></div>
+        <div class="field"><label for="l-pass">Mot de passe</label><input type="password" id="l-pass" name="password" autocomplete="current-password" required><span class="msg">Indiquez votre mot de passe.</span></div>
+      </fieldset>
+      <div class="form-end"><button class="btn btn-main" type="submit">Se connecter</button><p class="notice" data-notice></p></div>
+    </form>
+    <div id="esp-locked" class="empty" hidden>Chargement…</div>
+    <div id="esp-main" hidden>
+      <div class="admin-bar">
+        <span class="muted" id="esp-who"></span>
+        <button class="chip" type="button" id="esp-csv" style="margin-inline-start:auto">Exporter (CSV)</button>
+        <button class="chip" type="button" id="esp-logout">Se déconnecter</button>
+      </div>
+      <div class="admin-bar" role="group" aria-label="Filtrer les demandes">
+        <button class="chip" type="button" data-filter="tout" aria-pressed="true">Toutes</button>
+        <button class="chip" type="button" data-filter="test" aria-pressed="false">Tests d’admission</button>
+        <button class="chip" type="button" data-filter="inscription" aria-pressed="false">Pré-inscriptions</button>
+        <span class="muted" id="esp-count" style="margin-inline-start:auto"></span>
+      </div>
+      <div class="tablewrap">
+        <table class="req">
+          <thead><tr><th scope="col">Reçue le</th><th scope="col">Type</th><th scope="col">Enfant</th><th scope="col">Niveau</th><th scope="col">Session</th><th scope="col">Parent</th><th scope="col">Téléphone</th><th scope="col">Détails</th><th scope="col">Suivi</th></tr></thead>
+          <tbody id="esp-rows"></tbody>
+        </table>
+        <p class="empty" id="esp-empty" hidden>Aucune demande pour l’instant. Les demandes envoyées depuis le site apparaîtront ici.</p>
+      </div>
+    </div>
+  </div>
+</section>

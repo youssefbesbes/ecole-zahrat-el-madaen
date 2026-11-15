@@ -1,0 +1,99 @@
+<!--meta {
+  "title": "Admissions 2027–2028 – Test et pré-inscription | Zahrat Al Madaeen",
+  "description": "Pré-inscrivez votre enfant ou réservez un test d’admission en ligne pour la rentrée 2027–2028 à l’école Zahrat Al Madaeen, Nouvelle Médina, Ben Arous."
+}-->
+<section class="hero hero-page" aria-labelledby="t-adm">
+  <div class="wrap">
+    <div class="hero-text narrow">
+      <h1 id="t-adm">Admissions 2027–2028</h1>
+      <p class="lead">Un seul formulaire pour toutes les demandes. Pour le préparatoire et la 1re année, la pré-inscription est directe. À partir de la 2e année, l’admission se fait sur test, pendant les vacances scolaires.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-top">
+  <div class="wrap">
+    <div class="head"><h2>Comment ça marche</h2></div>
+    <ol class="steps">
+      <li><h3>Vous faites la demande</h3><p class="muted">Remplissez le formulaire ci-dessous. Pour une entrée en 2e année ou plus, choisissez aussi une session de test.</p></li>
+      <li><h3>L’école vous appelle</h3><p class="muted">L’administration vous rappelle pour confirmer la place ou fixer le jour et l’heure du test.</p></li>
+      <li><h3>Le test, si besoin</h3><p class="muted">Un test adapté au niveau de l’enfant, dans les locaux de l’école.</p></li>
+      <li><h3>L’inscription</h3><p class="muted">Vous finalisez l’inscription auprès de l’administration avec les documents demandés.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec sec-tint" id="formulaire">
+  <div class="wrap adm">
+    <div>
+      <form class="formbox" id="form-adm" novalidate>
+        <fieldset>
+          <legend>1. Votre enfant</legend>
+          <div class="field"><label for="a-enfant">Prénom et nom de l’enfant</label><input type="text" id="a-enfant" name="enfant" autocomplete="off" required><span class="msg">Indiquez le prénom et le nom de l’enfant.</span></div>
+          <div class="grid2">
+            <div class="field"><label for="a-naiss">Date de naissance</label><input type="date" id="a-naiss" name="naissance" min="2010-01-01" required><span class="msg">Indiquez la date de naissance.</span></div>
+            <div class="field"><label for="a-niveau">Niveau demandé pour 2027–2028</label>
+              <select id="a-niveau" name="niveau" required>
+                <option value="">Choisir…</option>
+                <option value="Préparatoire">Préparatoire</option>
+                <option value="1re année">1re année</option>
+                <option value="2e année" data-test>2e année</option>
+                <option value="3e année" data-test>3e année</option>
+                <option value="4e année" data-test>4e année</option>
+                <option value="5e année" data-test>5e année</option>
+                <option value="6e année" data-test>6e année</option>
+              </select><span class="msg">Choisissez le niveau demandé.</span></div>
+          </div>
+          <div class="field"><label for="a-ecole">École actuelle</label><input type="text" id="a-ecole" name="ecole_actuelle" placeholder="Facultatif"></div>
+          <p class="info" id="adm-kind" hidden></p>
+        </fieldset>
+
+        <fieldset id="adm-session" hidden>
+          <legend>2. Session de test</legend>
+          <div class="sessions" role="radiogroup" aria-label="Session de test">
+            <div class="session"><input type="radio" name="session" id="s1" value="Février 2027"><label for="s1"><b>Février 2027</b><span>Vacances de mi-trimestre</span></label></div>
+            <div class="session"><input type="radio" name="session" id="s2" value="Mars 2027"><label for="s2"><b>Mars 2027</b><span>Vacances de printemps</span></label></div>
+            <div class="session"><input type="radio" name="session" id="s3" value="Juin 2027"><label for="s3"><b>Juin 2027</b><span>Fin d’année scolaire</span></label></div>
+          </div>
+          <p class="hint">Le jour et l’heure exacts vous sont confirmés par téléphone.</p>
+          <p class="field err" id="err-session" hidden><span class="msg" style="display:block">Choisissez une session de test.</span></p>
+        </fieldset>
+
+        <fieldset>
+          <legend><span data-step>2</span>. Vos coordonnées</legend>
+          <div class="grid2">
+            <div class="field"><label for="a-parent">Nom du parent</label><input type="text" id="a-parent" name="parent" autocomplete="name" required><span class="msg">Indiquez votre nom.</span></div>
+            <div class="field"><label for="a-tel">Téléphone</label><input type="tel" id="a-tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="Ex. 97 516 240" required><span class="hint">8 chiffres, l’école vous appellera sur ce numéro.</span><span class="msg">Entrez un numéro tunisien à 8 chiffres.</span></div>
+          </div>
+          <div class="field"><label for="a-email">E-mail</label><input type="email" id="a-email" name="email" autocomplete="email" placeholder="Facultatif"><span class="msg">Vérifiez l’adresse e-mail.</span></div>
+          <div class="field"><label for="a-msg">Une précision à donner ?</label><textarea id="a-msg" name="message" placeholder="Frères et sœurs déjà à l’école, besoins particuliers… (facultatif)"></textarea></div>
+          <div class="field"><div class="check"><input type="checkbox" id="a-ok" name="accord" required><label for="a-ok" style="font-weight:500">J’accepte que l’école utilise ces informations pour me recontacter au sujet de l’admission.</label></div><span class="msg">Cochez cette case pour envoyer la demande.</span></div>
+        </fieldset>
+        <div class="hp" aria-hidden="true"><label for="a-site">Ne pas remplir</label><input type="text" id="a-site" name="site" tabindex="-1" autocomplete="off"></div>
+        <div class="form-end"><button class="btn btn-main" type="submit">Envoyer ma demande</button><p class="notice" data-notice></p></div>
+      </form>
+      <div class="done" id="done-adm" role="status" tabindex="-1">
+        <h3 data-done-title></h3>
+        <p data-done-text></p>
+        <a class="btn btn-line" href="/">Retour à l’accueil</a>
+      </div>
+    </div>
+
+    <aside class="aside">
+      <div class="aside-box">
+        <h2>Documents à préparer</h2>
+        <p class="muted">À apporter à l’administration une fois la place confirmée.</p>
+        <ul>
+          <li>Extrait de naissance de l’enfant</li>
+          <li>Photos d’identité récentes</li>
+          <li>Dernier bulletin scolaire (à partir de la 1re année)</li>
+        </ul>
+      </div>
+      <div class="aside-box">
+        <h2>Frais de scolarité</h2>
+        <p class="muted">Les frais d’inscription et les mensualités vous sont communiqués par l’administration.</p>
+        <p><a href="tel:+21697516240" dir="ltr">97 516 240</a> · <a href="https://wa.me/21697516240" rel="noopener">WhatsApp</a></p>
+      </div>
+    </aside>
+  </div>
+</section>
