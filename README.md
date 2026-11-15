@@ -70,7 +70,9 @@ Sans `.env`, le site fonctionne mais les formulaires proposent l’envoi par Wha
 3. **Site configuration → Environment variables** : ajouter `VITE_SUPABASE_URL` et `VITE_SUPABASE_ANON_KEY`, puis relancer un déploiement.
 4. Optionnel : brancher le nom de domaine de l’école dans **Domain management**.
 
-Sans GitHub (méthode actuelle) : le site est déjà relié au projet Netlify `zahrat-al-madaeen` (fichier `.netlify/state.json`). Pour publier une mise à jour : `npm run deploy` (le `.env` local doit être rempli pour que les formulaires utilisent Supabase).
+**Déploiement automatique** : le projet Netlify est relié au dépôt GitHub `youssefbesbes/ecole-zahrat-el-madaen`. Chaque `git push` sur `main` reconstruit et publie le site (réglages de build dans `netlify.toml`).
+
+Publication manuelle depuis l’ordinateur (secours) : `npm run deploy`.
 
 Adresse : https://zahrat-al-madaeen.netlify.app — si l’équipe Netlify a la « Team protection » activée, passer l’accès visiteurs en public dans **Project configuration → Access & security**.
 
