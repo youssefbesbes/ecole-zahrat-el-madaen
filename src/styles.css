@@ -341,10 +341,12 @@ html[lang="ar"] .hero-ar{direction:ltr;text-align:right}
 }
 @media (max-width:760px){.mbar a span{white-space:nowrap}.mbar .mbar-main{font-size:.88rem}}
 
-/* keep clear of the hosting badge (see liftForBadge in main.js) */
+/* keep clear of the hosting badge (see liftForBadge in main.js).
+   The mobile bar stays flush with the screen edge and grows instead,
+   so the badge sits on the bar's own background, below the buttons. */
 .wa{bottom:calc(18px + var(--badge-h,0px) + env(safe-area-inset-bottom,0px))}
 @media (max-width:760px){
-  .mbar{bottom:var(--badge-h,0px)}
+  .mbar{bottom:0;padding-bottom:calc(8px + var(--badge-h,0px) + env(safe-area-inset-bottom,0px))}
   body{padding-bottom:calc(72px + var(--badge-h,0px) + env(safe-area-inset-bottom,0px))}
 }
 
