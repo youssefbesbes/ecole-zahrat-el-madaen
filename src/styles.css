@@ -362,3 +362,28 @@ html[lang="ar"] .hero-ar{direction:ltr;text-align:right}
   .brand b{white-space:normal;font-size:1.05rem}
   .brand > span > span{display:none}
 }
+
+/* phones: a lighter first screen */
+@media (max-width:640px){
+  .hero{padding:24px 0 48px}
+  .hero .wrap{gap:28px}
+  .hero-text{gap:16px}
+  .hero h1{font-size:2.15rem}
+  .hero-ar{font-size:1.05rem}
+  .hero-text .lead{font-size:1.05rem}
+  .hero-actions .btn{flex:1 1 100%}
+  .hero-facts{font-size:.9rem;gap:6px 16px}
+  .bloom{max-width:280px}
+  .hero-page{padding:32px 0 20px}
+  .hero-page h1{font-size:2.1rem}
+}
+
+/* phones: the action bar slides in once the visitor scrolls past the first screen
+   (main.js adds .js and toggles .bar-on), and is a little slimmer */
+@media (max-width:760px){
+  .mbar{padding-top:6px;gap:6px}
+  .mbar a{min-height:46px;font-size:.78rem}
+  .js .mbar{transform:translateY(100%);visibility:hidden;transition:transform .25s ease,visibility 0s .25s}
+  .js body.bar-on .mbar{transform:none;visibility:visible;transition:transform .25s ease}
+}
+@media (max-width:760px) and (prefers-reduced-motion:reduce){.js .mbar,.js body.bar-on .mbar{transition:none}}

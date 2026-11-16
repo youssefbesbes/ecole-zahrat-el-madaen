@@ -31,6 +31,14 @@ themeBtn.addEventListener('click', () => {
 darkMq.addEventListener('change', syncTheme);
 syncTheme();
 
+// Phones: keep the first screen clean; the call/WhatsApp/book bar slides in after scrolling.
+root.classList.add('js');
+if (document.querySelector('.mbar')){
+  const onScroll = () => document.body.classList.toggle('bar-on', scrollY > 280);
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
+
 // Netlify's free plan pins a "Powered by Netlify" badge (iframe) to the bottom-right
 // corner. Lift the mobile action bar and WhatsApp button above it instead of hiding it.
 function liftForBadge(){
