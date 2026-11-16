@@ -27,6 +27,7 @@ const T = {
     brand: 'Zahrat Al Madaeen', brandSub: 'زهرة المدائن · Nouvelle Médina', home: 'Zahrat Al Madaeen, accueil',
     nav: { accueil: 'Accueil', ecole: 'L’école', pedagogie: 'Pédagogie', admissions: 'Admissions', actualites: 'Actualités', contact: 'Contact' },
     navLabel: 'Navigation principale', menu: 'Ouvrir le menu',
+    toDark: 'Passer en mode sombre', toLight: 'Passer en mode clair',
     cta: 'Réserver un test', switchTo: 'العربية', switchLabel: 'النسخة العربية',
     band: ['Une question sur l’admission ?', `Réservez un test en ligne ou appelez l’administration au ${PHONE}.`],
     bar: ['Appeler', 'WhatsApp', 'Réserver un test'], wa: 'Écrire à l’école sur WhatsApp',
@@ -41,6 +42,7 @@ const T = {
     brand: 'زهرة المدائن', brandSub: 'Zahrat Al Madaeen · المدينة الجديدة', home: 'زهرة المدائن، الصفحة الرئيسية',
     nav: { accueil: 'الرئيسية', ecole: 'المدرسة', pedagogie: 'البيداغوجيا', admissions: 'التسجيل', actualites: 'الأخبار', contact: 'اتصل بنا' },
     navLabel: 'القائمة الرئيسية', menu: 'فتح القائمة',
+    toDark: 'التبديل إلى الوضع الداكن', toLight: 'التبديل إلى الوضع الفاتح',
     cta: 'احجز اختبارًا', switchTo: 'Français', switchLabel: 'Version française',
     band: ['سؤال حول التسجيل؟', `احجزوا اختبارًا عبر الموقع أو اتصلوا بالإدارة على الرقم <span dir="ltr">${PHONE}</span>.`],
     bar: ['اتصل', 'واتساب', 'احجز اختبارًا'], wa: 'راسلوا المدرسة على واتساب',
@@ -50,7 +52,7 @@ const T = {
   },
 };
 
-const flower = (size) => `<svg width="${size}" height="${size}" viewBox="0 0 48 48" aria-hidden="true"><g transform="translate(24 24)"><ellipse rx="7" ry="13" cy="-11" fill="#FFC53D"/><ellipse rx="7" ry="13" cy="-11" fill="#FF7A9A" transform="rotate(72)"/><ellipse rx="7" ry="13" cy="-11" fill="#3DBE84" transform="rotate(144)"/><ellipse rx="7" ry="13" cy="-11" fill="#2370BF" transform="rotate(216)"/><ellipse rx="7" ry="13" cy="-11" fill="#FFC53D" transform="rotate(288)"/><circle r="7" fill="#17324D"/></g></svg>`;
+const flower = (size) => `<svg width="${size}" height="${size}" viewBox="0 0 48 48" aria-hidden="true"><g transform="translate(24 24)"><ellipse rx="7" ry="13" cy="-11" fill="#FFA06B"/><ellipse rx="7" ry="13" cy="-11" fill="#FFC9A6" transform="rotate(72)"/><ellipse rx="7" ry="13" cy="-11" fill="#8DB2FF" transform="rotate(144)"/><ellipse rx="7" ry="13" cy="-11" fill="#1F5BFF" transform="rotate(216)"/><ellipse rx="7" ry="13" cy="-11" fill="#FFA06B" transform="rotate(288)"/><circle r="7" fill="#0A0D14"/></g></svg>`;
 const icon = {
   phone: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>',
   wa: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20l1.3-5.2A8.4 8.4 0 1 1 21 11.5z"/></svg>',
@@ -99,7 +101,9 @@ ${alternates}
 ${canonical ? `<meta property="og:url" content="${canonical}">` : ''}
 <meta property="og:image" content="${SITE_URL}/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0F7A51">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A0D14" media="(prefers-color-scheme: dark)">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -117,6 +121,10 @@ ${key === 'accueil' ? `<script type="application/ld+json">${schema()}</script>` 
       <span><b>${t.brand}</b><span>${t.brandSub}</span></span>
     </a>
     <div class="top-end">
+      <button class="theme-btn" type="button" data-to-dark="${t.toDark}" data-to-light="${t.toLight}" aria-label="${t.toDark}">
+        <svg class="i-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="i-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
       ${hasTwin ? `<a class="lang" href="${urlFor(other, key)}" hreflang="${other}" lang="${other}" title="${t.switchLabel}">${t.switchTo}</a>` : ''}
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="${t.menu}">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
